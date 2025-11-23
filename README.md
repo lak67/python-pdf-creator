@@ -19,20 +19,34 @@ A lightweight Python GUI utility that accepts a ZIP file containing folders of i
     ```
 
 2.  **Install Dependencies**
-    This project uses `Pillow` for image processing. `tkinter` is used for the GUI and comes pre-installed with Python on most systems.
+    This project uses `Pillow` for image processing.
     ```bash
     pip install -r requirements.txt
     ```
 
-3.  **Run the Application**
-    ```bash
-    python main.py
-    ```
+### 🐧 Linux & 🍎 macOS Users
+While `tkinter` (the GUI library) is standard on Windows, it is sometimes missing on Linux or macOS.
+
+* **If you get this error:** `ModuleNotFoundError: No module named 'tkinter'`
+* **Run this command to fix it:**
+
+    * **Ubuntu/Debian:**
+        ```bash
+        sudo apt-get install python3-tk
+        ```
+    * **Fedora:**
+        ```bash
+        sudo dnf install python3-tkinter
+        ```
+    * **macOS (if using Homebrew):**
+        ```bash
+        brew install python-tk
+        ```
 
 ## 📖 How to Use
 
 ### 1. Prepare your ZIP file
-Ensure your images are inside folders within the ZIP file. The program supports `.jpg`, `.jpeg`, `.png`, and `.bmp`.
+Ensure your images are inside folders within the ZIP file. The program supports `.jpg`, `.jpeg`, `.png`, `.webp` and `.bmp`.
 
 **Supported Structure Example:**
 ```text
