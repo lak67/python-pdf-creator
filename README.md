@@ -1,6 +1,18 @@
 # 📚 Zip-to-PDF Batch Converter
 
-A lightweight Python GUI utility that accepts a ZIP file containing folders of images (manga, comics, or scanned documents) and automatically converts each folder into a sequential PDF file.
+A lightweight, local desktop utility that accepts a ZIP file containing folders of images (manga, comics, or scanned documents) and automatically converts each folder into a sequential PDF file.
+
+## 📥 Download & Run (No Python Required)
+
+If you just want to use the tool, you don't need to install Python.
+
+1.  **[Download the latest release here](https://github.com/your-username/your-repo-name/releases/latest)**.
+2.  Download the **`.zip`** file listed under Assets.
+3.  Extract the zip and run `ZipToPDF.exe`.
+
+> **Note:** On the first run, Windows may show a blue popup saying "Windows protected your PC". This happens because this app is open-source and not digitally signed by Microsoft. Click **More Info** -> **Run Anyway**.
+
+---
 
 ## 🚀 Features
 
@@ -10,7 +22,17 @@ A lightweight Python GUI utility that accepts a ZIP file containing folders of i
 * **Auto-Organized Output:** Automatically creates a new folder next to your ZIP file to store the generated PDFs.
 * **Duplicate Handling:** Automatically renames PDFs if multiple folders share the same name to prevent overwriting.
 
-## 🛠️ Installation
+---
+
+## 🛠️ For Developers (Running from Source)
+
+If you want to modify the code or run it using your own Python environment, follow these steps.
+
+### Prerequisites
+* Python 3.x
+* Pillow (`pip install Pillow`)
+
+### Installation
 
 1.  **Clone the repository**
     ```bash
@@ -19,42 +41,23 @@ A lightweight Python GUI utility that accepts a ZIP file containing folders of i
     ```
 
 2.  **Install Dependencies**
-    This project uses `Pillow` for image processing.
     ```bash
     pip install -r requirements.txt
     ```
 
-### 🐧 Linux & 🍎 macOS Users
-While `tkinter` (the GUI library) is standard on Windows, it is sometimes missing on Linux or macOS.
+    **🐧 Linux & 🍎 macOS Users:**
+    If you see `ModuleNotFoundError: No module named 'tkinter'`, you need to install it manually:
+    * **Ubuntu/Debian:** `sudo apt-get install python3-tk`
+    * **Fedora:** `sudo dnf install python3-tkinter`
+    * **macOS (Homebrew):** `brew install python-tk`
 
-* **If you get this error:** `ModuleNotFoundError: No module named 'tkinter'`
-* **Run this command to fix it:**
+3.  **Run the Script**
+    ```bash
+    python main.py
+    ```
 
-    * **Ubuntu/Debian:**
-        ```bash
-        sudo apt-get install python3-tk
-        ```
-    * **Fedora:**
-        ```bash
-        sudo dnf install python3-tkinter
-        ```
-    * **macOS (if using Homebrew):**
-        ```bash
-        brew install python-tk
-        ```
-
-## 📖 How to Use
-
-### 1. Prepare your ZIP file
-Ensure your images are inside folders within the ZIP file. The program supports `.jpg`, `.jpeg`, `.png`, `.webp` and `.bmp`.
-
-**Supported Structure Example:**
-```text
-MyMangaSeries.zip
-├── Volume 1            <-- Will become "Volume 1.pdf"
-│   ├── page1.jpg
-│   ├── page2.jpg
-│   └── ...
-└── Volume 2            <-- Will become "Volume 2.pdf"
-    ├── page1.jpg
-    └── ...
+### Building the Executable
+To build the `.exe` yourself, use PyInstaller:
+```bash
+pip install pyinstaller
+pyinstaller --noconsole --onefile --name "ZipToPDF" main.py
