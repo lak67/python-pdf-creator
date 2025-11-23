@@ -24,6 +24,14 @@ If you just want to use the tool, you don't need to install Python.
 
 ---
 
+### ☁️ iCloud Support
+You can choose to save files directly to iCloud. 
+
+* **How it works:** The tool detects your local `iCloudDrive` folder on your computer and saves the PDFs there. The official iCloud app then syncs them to the cloud automatically.
+* **Requirements:** You must have **iCloud for Windows** (or be on a Mac) installed and signed in for this feature to work.
+
+---
+
 ## 🛠️ For Developers (Running from Source)
 
 If you want to modify the code or run it using your own Python environment, follow these steps.
