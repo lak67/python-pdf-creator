@@ -44,7 +44,7 @@ If you want to modify the code or run it using your own Python environment, foll
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone [https://github.com/lak67/python-pdf-creator.git](https://github.com/lak67/python-pdf-creator.git)
     cd your-repo-name
     ```
 
